@@ -26,7 +26,7 @@ namespace CustomerOrderService.Tests
                 OrderId = 1,
                 ProductId = 212,
                 ProductQuantity = 1,
-                Amount = 150
+                Amount = 400
             };
             
             CustomerOrderService customerOrderService = new CustomerOrderService();
