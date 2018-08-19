@@ -34,7 +34,7 @@ namespace CustomerOrderService.Tests
             customerOrderService.ApplyDiscount(premiumCustomer, order);
             Console.WriteLine(order.Amount);
             //Assert
-            Assert.AreEqual(order.Amount, 135);
+            Assert.AreEqual(order.Amount, 360);
 
         }
     }
