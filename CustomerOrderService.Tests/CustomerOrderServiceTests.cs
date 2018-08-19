@@ -37,5 +37,36 @@ namespace CustomerOrderService.Tests
             Assert.AreEqual(order.Amount, 360);
 
         }
+        [TestCase]
+        public void When_SpecialCustomer_Expect_20PercentDiscount()
+        {
+            // A test case body is divided into three sections "AAA" denotes the Arrange, Act, and Assert.
+            //Arrange
+            Customer specialCustomer = new Customer
+            {
+                CustomerId = 1,
+                CustomerName = "Jasmine",
+                CustomerType = CustomerType.SpecialCustomer
+
+            };
+
+            Order order = new Order
+            {
+                OrderId = 2,
+                ProductId = 500,
+                ProductQuantity = 2,
+                Amount = 1000
+            };
+
+            CustomerOrderService customerOrderService = new CustomerOrderService();
+            //Act
+            customerOrderService.ApplyDiscount(specialCustomer, order);
+            Console.WriteLine(order.Amount);
+            //Assert
+            Assert.AreEqual(order.Amount, 800);
+
+        }
+
+
     }
 }
